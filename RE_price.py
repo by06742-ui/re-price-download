@@ -462,7 +462,15 @@ class App(tk.Tk):
 
         ttk.Label(self, text="결과 / 진행 상황").pack(anchor="w", padx=10)
         self.log = tk.Text(self, height=12, wrap="word")
-        self.log.pack(fill="both", expand=True, padx=10, pady=(0, 10))
+        self.log.pack(fill="both", expand=True, padx=10, pady=(0, 4))
+
+        web = ttk.Frame(self); web.pack(fill="x", padx=10, pady=(0, 8))
+        ttk.Label(web, text="웹 버전:", foreground="#666").pack(side="left")
+        link = ttk.Label(web, text="https://re-price-gyvnctyrkzvrry52oyee5l.streamlit.app/",
+                         foreground="#1a73e8", cursor="hand2")
+        link.pack(side="left", padx=4)
+        link.bind("<Button-1>", lambda e: __import__("webbrowser").open(
+            "https://re-price-gyvnctyrkzvrry52oyee5l.streamlit.app/"))
 
         self.after(100, self.drain)
         threading.Thread(target=self._prepare, daemon=True).start()
