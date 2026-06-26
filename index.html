@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부동산 실거래가 산출기 — 다운로드</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --line:#262b36;
+    --txt:#e8ebf0; --sub:#9aa3b2; --accent:#3b82f6; --accent2:#2563eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Segoe UI','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#1b2030,#0f1115);
+    color:var(--txt);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+  }
+  .card{
+    width:100%;max-width:540px;background:var(--card);border:1px solid var(--line);
+    border-radius:20px;padding:40px 32px;text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+  }
+  .badge{display:inline-block;font-size:12px;letter-spacing:.5px;color:var(--sub);
+    border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin-bottom:20px}
+  .icon{font-size:46px;margin-bottom:8px}
+  h1{font-size:25px;font-weight:700;line-height:1.35;margin-bottom:10px}
+  p.lead{color:var(--sub);font-size:15px;line-height:1.7;margin-bottom:26px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;justify-content:center;
+    width:100%;padding:16px 20px;font-size:17px;font-weight:700;color:#fff;
+    background:linear-gradient(180deg,var(--accent),var(--accent2));
+    border:none;border-radius:14px;cursor:pointer;text-decoration:none;
+    transition:transform .08s ease,filter .15s ease;
+  }
+  .btn:hover{filter:brightness(1.08)}
+  .btn:active{transform:translateY(1px)}
+  .meta{font-size:12.5px;color:var(--sub);margin-top:14px}
+  ul.feat{text-align:left;margin:26px auto 0;max-width:420px;list-style:none}
+  ul.feat li{color:var(--sub);font-size:14px;line-height:1.9;padding-left:24px;position:relative}
+  ul.feat li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .note{margin-top:24px;padding:14px 16px;background:#12151c;border:1px solid var(--line);
+    border-radius:12px;font-size:12.5px;color:var(--sub);line-height:1.7;text-align:left}
+  .foot{margin-top:22px;font-size:12px;color:#5c6472}
+  a.link{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+  <main class="card">
+    <span class="badge">Windows · 무료</span>
+    <div class="icon">🏠</div>
+    <h1>서울 빌라(연립·다세대)<br>실거래가 산출기</h1>
+    <p class="lead">지번 또는 도로명 주소만 입력하면 대지평당가와 호별 예상 거래가를 산출합니다.</p>
+
+    <a id="dl" class="btn" href="#" download>⬇️ 프로그램 다운로드 (RE_price.exe)</a>
+    <div class="meta">Windows 10/11 · 별도 설치 없이 실행 · 최신 빌드 자동 연결</div>
+
+    <ul class="feat">
+      <li>지번·도로명 주소로 바로 조회</li>
+      <li>건축물대장 기반 사용연수·구조 자동 반영</li>
+      <li>호별 대지권·평당가·예상가 산출</li>
+      <li>대량 조회 결과를 2시트 엑셀로 저장</li>
+    </ul>
+
+    <div class="note">
+      <b>설치 안내</b><br>
+      다운로드 후 실행 시 Windows에서 "PC를 보호했습니다" 창이 뜨면,
+      <b>추가 정보 → 실행</b>을 누르면 됩니다. (서명되지 않은 개인 제작 프로그램이라 나타나는 일반적인 안내입니다.)
+    </div>
+
+    <div class="foot">문의·피드백은 배포자에게 연락해 주세요.</div>
+  </main>
+
+<script>
+  // ▼▼▼ 본인 GitHub 정보로 한 번만 수정하세요 ▼▼▼
+  const USER = "by06742-ui";          // GitHub 사용자명
+  const REPO = "re-price-download";   // 저장소 이름(아래 1단계에서 만들 이름과 동일하게)
+  // ▲▲▲ 여기만 바꾸면 됩니다 ▲▲▲
+  document.getElementById("dl").href =
+    `https://github.com/${USER}/${REPO}/releases/latest/download/RE_price.exe`;
+</script>
+</body>
+</html>
